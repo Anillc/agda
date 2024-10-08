@@ -217,7 +217,7 @@ literateMd pos s = mkLayers pos $ md s
         else md rest
 
   md_begin       = rex "(.*)([[:space:]]*```(agda)?[[:space:]]*)"
-  md_begin_other = rex "[[:space:]]*```[a-zA-Z0-9-]*[[:space:]]*"
+  md_begin_other = rex "[[:space:]]*```.*[[:space:]]*"
 
   code :: String -> [(LayerRole, String)]
   code = caseLine [] $ \ line rest ->
